@@ -1,0 +1,4 @@
+QA Shop receipt
+Order: QA-1001
+Item: Wireless Mouse x1
+Total: $24.99

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QA Shop - Cart</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <span class="brand">QA Shop</span>
+    <nav>
+      <a href="/inventory.html">Products</a>
+      <a href="/playground.html">Playground</a>
+      <a href="/cart.html" data-testid="cart-link">Cart <span class="badge" data-testid="cart-count">0</span></a>
+      <span class="muted" data-testid="current-user"></span>
+      <button class="secondary" data-testid="logout-button">Log out</button>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Your cart</h1>
+
+    <div class="alert alert-error hidden" data-testid="checkout-error" role="alert"></div>
+
+    <div class="card hidden" data-testid="order-confirmation">
+      <h2 style="margin-top: 0">Thank you for your order!</h2>
+      <p>Order number: <strong data-testid="order-id"></strong></p>
+      <p>Total charged: <strong data-testid="order-total"></strong></p>
+      <a href="/inventory.html"><button class="secondary">Continue shopping</button></a>
+    </div>
+
+    <div data-testid="cart-view">
+      <p class="hidden" data-testid="empty-cart">Your cart is empty. <a href="/inventory.html">Browse products</a>.</p>
+
+      <table class="card" data-testid="cart-table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Subtotal</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody data-testid="cart-items"></tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3">Total</td>
+            <td data-testid="cart-total">$0.00</td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <div class="spacer"></div>
+
+      <form class="card" data-testid="checkout-form" novalidate>
+        <h2 style="font-size: 1.1rem; margin-top: 0">Checkout</h2>
+        <div class="field">
+          <label for="first-name">First name</label>
+          <input id="first-name" type="text" data-testid="first-name" />
+        </div>
+        <div class="field">
+          <label for="last-name">Last name</label>
+          <input id="last-name" type="text" data-testid="last-name" />
+        </div>
+        <div class="field">
+          <label for="postal-code">Postal code</label>
+          <input id="postal-code" type="text" data-testid="postal-code" />
+        </div>
+        <div class="field">
+          <label for="gift">
+            <input id="gift" type="checkbox" data-testid="gift-wrap" style="width:auto" />
+            Gift wrap this order
+          </label>
+        </div>
+        <button type="submit" data-testid="place-order">Place order</button>
+      </form>
+    </div>
+  </main>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/cart.js"></script>
+</body>
+</html>

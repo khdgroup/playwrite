@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Support widget</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body style="background:#fff">
+  <main style="padding: 0.75rem">
+    <p data-testid="frame-heading"><strong>Need help?</strong></p>
+    <button data-testid="frame-button">Chat with support</button>
+    <p data-testid="frame-status">Support is offline</p>
+  </main>
+  <script>
+    document.querySelector('[data-testid="frame-button"]').addEventListener('click', () => {
+      document.querySelector('[data-testid="frame-status"]').textContent = 'An agent will join shortly';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QA Shop - Login</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <span class="brand">QA Shop</span>
+  </header>
+
+  <main>
+    <h1>Sign in</h1>
+
+    <div class="card" style="max-width: 420px">
+      <div class="alert alert-error hidden" data-testid="login-error" role="alert"></div>
+
+      <form data-testid="login-form" novalidate>
+        <div class="field">
+          <label for="username">Username</label>
+          <input id="username" name="username" type="text" data-testid="username" autocomplete="username" />
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" data-testid="password" autocomplete="current-password" />
+        </div>
+
+        <button type="submit" data-testid="login-button">Log in</button>
+      </form>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="card" style="max-width: 420px">
+      <h2 style="font-size: 1rem; margin-top: 0">Test accounts</h2>
+      <ul class="muted" data-testid="credentials">
+        <li>standard_user / secret123</li>
+        <li>locked_user / secret123 (locked out)</li>
+      </ul>
+    </div>
+  </main>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "playwright-qa-course",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Step-by-step Playwright course for QA engineers, with a local demo app to practise on.",
+  "scripts": {
+    "app": "node app/server.js",
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "report": "playwright show-report",
+    "trace": "playwright show-trace",
+    "codegen": "playwright codegen http://127.0.0.1:4173",
+    "smoke": "playwright test --grep @smoke",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^24.0.0",
+    "typescript": "^7.0.2"
+  }
+}

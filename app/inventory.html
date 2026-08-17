@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QA Shop - Products</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <span class="brand">QA Shop</span>
+    <nav>
+      <a href="/inventory.html">Products</a>
+      <a href="/playground.html">Playground</a>
+      <a href="/cart.html" data-testid="cart-link">Cart <span class="badge" data-testid="cart-count">0</span></a>
+      <span class="muted" data-testid="current-user"></span>
+      <button class="secondary" data-testid="logout-button">Log out</button>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Products</h1>
+
+    <div class="alert alert-info hidden" data-testid="promo-banner" role="status"></div>
+
+    <div class="toolbar">
+      <div>
+        <label for="search">Search products</label>
+        <input id="search" type="search" data-testid="search" placeholder="e.g. keyboard" />
+      </div>
+      <div>
+        <label for="sort">Sort by</label>
+        <select id="sort" data-testid="sort">
+          <option value="name-asc">Name (A to Z)</option>
+          <option value="name-desc">Name (Z to A)</option>
+          <option value="price-asc">Price (low to high)</option>
+          <option value="price-desc">Price (high to low)</option>
+        </select>
+      </div>
+    </div>
+
+    <p data-testid="result-count" class="muted"></p>
+
+    <section class="grid" data-testid="product-list" aria-label="Product list"></section>
+
+    <p class="hidden" data-testid="empty-state">No products match your search.</p>
+
+    <div class="spacer"></div>
+
+    <section class="card">
+      <h2 style="font-size: 1.1rem; margin-top: 0">Customer reviews</h2>
+      <button class="secondary" data-testid="load-reviews">Load reviews</button>
+      <p class="hidden" data-testid="reviews-loading">Loading reviews...</p>
+      <ul data-testid="reviews" class="hidden"></ul>
+    </section>
+  </main>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/inventory.js"></script>
+</body>
+</html>
