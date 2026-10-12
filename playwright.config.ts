@@ -54,6 +54,10 @@ export default defineConfig({
     // Makes `getByTestId()` look at data-testid attributes (this is the default,
     // shown here so you know where to change it if your app uses data-qa).
     testIdAttribute: 'data-testid',
+
+    // Pause (in ms) after every action so you can follow a headed run by eye.
+    // Off by default; `npm run test:slow` sets SLOWMO=500.
+    launchOptions: { slowMo: Number(process.env.SLOWMO ?? 0) },
   },
 
   projects: [
