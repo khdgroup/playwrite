@@ -10,13 +10,28 @@ accounts to request, no flaky third-party site.
 
 ## 1. Setup (5 minutes)
 
+Install these first:
+
+- **Node.js 20 or newer** (npm comes with it) - check with `node -v`
+- **Git**, to clone the repo
+
+Then, from a terminal:
+
 ```bash
+git clone https://github.com/khdgroup/playwrite.git
+cd playwrite
 npm install
 npx playwright install chromium     # add "firefox webkit" for cross-browser later
 npx playwright test                 # should finish green
 ```
 
-Requirements: Node.js 18 or newer.
+On Linux, use `npx playwright install --with-deps chromium` instead, so the
+system libraries the browser needs are installed too.
+
+`npx playwright install chromium` is not optional: it downloads the exact browser
+build this Playwright version drives. If a run fails with *"Executable doesn't
+exist ... Please run: npx playwright install"*, run it again - this happens
+whenever `npm install` brings in a different Playwright version.
 
 You never need to start the app yourself - Playwright boots it before the run and
 stops it after (the `webServer` block in `playwright.config.ts`). To poke at it
@@ -121,6 +136,7 @@ npx playwright test --grep @smoke            # by tag
 npx playwright test --project=authenticated  # lesson 08 only
 npx playwright test --ui                     # interactive mode
 npx playwright test --headed --workers=1     # watch it happen, one at a time
+npm run test:slow                            # same, pausing after every action (macOS/Linux)
 npx playwright test --debug                  # step-through inspector
 npx playwright show-report                   # last HTML report
 npx playwright codegen http://127.0.0.1:4173 # record a test
