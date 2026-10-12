@@ -136,7 +136,7 @@ npx playwright test --grep @smoke            # by tag
 npx playwright test --project=authenticated  # lesson 08 only
 npx playwright test --ui                     # interactive mode
 npx playwright test --headed --workers=1     # watch it happen, one at a time
-npm run test:slow                            # same, pausing after every action (macOS/Linux)
+npm run test:slow                            # same, pausing a second after every action
 npx playwright test --debug                  # step-through inspector
 npx playwright show-report                   # last HTML report
 npx playwright codegen http://127.0.0.1:4173 # record a test

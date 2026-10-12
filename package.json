@@ -7,7 +7,7 @@
     "app": "node app/server.js",
     "test": "playwright test",
     "test:headed": "playwright test --headed",
-    "test:slow": "SLOWMO=1000 playwright test --headed --workers=1",
+    "test:slow": "cross-env SLOWMO=1000 playwright test --headed --workers=1",
     "test:ui": "playwright test --ui",
     "test:debug": "playwright test --debug",
     "report": "playwright show-report",
@@ -19,6 +19,7 @@
   "devDependencies": {
     "@playwright/test": "^1.62.1",
     "@types/node": "^24.0.0",
+    "cross-env": "^10.1.0",
     "typescript": "^7.0.2"
   }
 }
