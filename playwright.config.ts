@@ -56,7 +56,7 @@ export default defineConfig({
     testIdAttribute: 'data-testid',
 
     // Pause (in ms) after every action so you can follow a headed run by eye.
-    // Off by default; `npm run test:slow` sets SLOWMO=500.
+    // Off by default; `npm run test:slow` sets SLOWMO=1000.
     launchOptions: { slowMo: Number(process.env.SLOWMO ?? 0) },
   },
 
